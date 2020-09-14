@@ -41,19 +41,22 @@
   <div id="app">
     
       
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
     <main class="content on">
       
 <section class="cover">
     
   <div class="cover-frame">
     <div class="bg-box">
-      <img src="/images/cover1.jpg" alt="image frame" />
+      <img src="/images/cover2.jpg" alt="image frame" />
     </div>
     <div class="cover-inner text-center text-white">
       <h1><a href="/">寒</a></h1>
       <div id="subtitle-box">
         
-          <span id="subtitle">这U盘有毒</span>
+        <span id="subtitle"></span>
         
       </div>
       <div>
@@ -68,9 +71,26 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
 
 <!-- Subtitle -->
 
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['思念，是淡淡的幸福', '最美好的事，是看见寒寒的微笑', '吟诵诗千卷，才发现最美的诗是你'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
 <div id="main">
   <section class="outer">
   <article class="articles">
@@ -482,6 +502,10 @@
 <!-- ClickBoom1 -->
 
 <!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
 
 <!-- CodeCopy -->
 
