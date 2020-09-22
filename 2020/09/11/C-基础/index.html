@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    C++基础 |  寒
+    基础知识 |  寒
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -41,9 +41,6 @@
   <div id="app">
     
       
-      <canvas width="1777" height="841"
-        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
-      
     <main class="content on">
       <section class="outer">
   <article
@@ -58,7 +55,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  C++基础
+  基础知识
 </h1>
  
 
@@ -73,7 +70,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">3.9k</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -82,75 +79,73 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">13 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>#C++一级标题<br>分类—小点<br>1.内置类型无默认构造函数，需要显示的初始化</p>
-<p>int *p = new int；//未初始化<br>int *p = new int（）；//初始化0<br>2.生命周期，作用域定义：——变量的生存时间，变量的使用范围</p>
-<p>3.常量引用的作用：传引用不会新创建一个新变量然后进行拷贝，而是直接传对象，速度快，同时保证了在函数内部无法对对象进行修改。</p>
-<p>4.protested的作用：完全为了子类服务。能在子类继承父类后，保证父类中对象能被子类访问的同时，不被类外成员访问。</p>
-<p>5.野指针：指针指向了不合理的地址。（指向释放了的资源，指向未被初始化的对象）</p>
-<p>6.函数指针：是指向函数的指针。每个函数都有一个入口地址，函数指针就指向该地址。有了该指针变量就可以调用该函数了。</p>
-<p>7.静态函数和虚函数区别：静态函数编译前已经确定，虚函数动态绑定。</p>
-<p>关键字、动态内存<br>1.补码的作用即表示<br>计算机中全是加运算，补码的是为了将计算机中的减法化为加法，这样只需要考虑加法就可以了。</p>
-<p>相当于完成了数字，0到255和-128到127的映射关系。</p>
-<p>tip:-128只有补码 1000 0000</p>
-<p>负数的补码：符号位不变，取反，+1</p>
-<p>-8</p>
-<p>原码：1000 1000</p>
-<p>反码：1111 0111</p>
-<p>补码：1111 1110</p>
-<p>2.float和double如何取0<br>float有效数字为6位。double有效数字为10位。<br>我们利用 fabs(float x)函数来求取浮点数的绝对值，从而进行比较<br>if(fabs(x)&lt; 0.000001)<br>3.C++关键字 / 运算符（操作符）<br>运算符/操作符<br>自增自减 ++ / –<br>关系操作符 &lt; 、&gt; 、&lt;= 、&gt;=<br>逻辑运算符号 &amp;&amp; 和 ||<br>位操作符<br>按位与 &amp; ——双1才1<br>按位或 | ——有1则1<br>按位异或 ^ ——不同1，相同0<br>取反 ~<br>左移&lt;&lt; 乘以2<br>右移&gt;&gt; 除以2<br>4.malloc/free和new/delete的区别<br>malloc/free是库函数，需要库支持，而new/delete是C++的关键字，需要编译器支持<br>new相比malloc内置sizeof、类型转换、安全检查等功能，更简单更安全<br>new/delete可以分别调用构造和析构函数，而malloc/free不可以<br>分配内存失败，前者返回NULL，后者抛出异常<br>5.如何减少因为手动申请和释放内存，带来的内存碎片<br>采用内存池来实现内存的管理（先从内存池中拿，不够的话再去申请新的）<br>定义：内存池是一种内存分配的方式。在申请动态内存时，预先申请分配一些内存块做备用。如果申请内存就从内存池中拿内存块分配，不够再申请新的内存。<br>优点：尽量避免内存碎片，提高内存分配效率<br>6.C++怎么定义常量，常量存放在哪个位置<br>E栈区—存放函数局部变量，形参和函数返回值等<br>D堆区—存放 malloc 和 new 自己开辟的内存————手动申请和释放<br>C静态区（全局区）—存放静态变量和全局变量<br>B常量区—存放常量，如：10，字符串常量等等<br>A代码区—存放程序代码<br>局部变量：栈区</p>
-<p>全局常量：全局区 / 静态区，对于全局变量，编译期一般不分配内存，放在符号表中以提高访问效率</p>
-<p>字符串常量：常量区</p>
-<p>指针<em>、const、static、extern<br>1.引用和指针的区别<br>指针是对象的地址，有自己的空间，<br>所以初始化指针可以为NULL。而引用是对象的别名，没有自己内存空间，必须实例化。<br>有指向指针的指针，但是没有引用的引用，引用的对象必须是实体<br>使用时：<br>3.1指针可以改变指向别的对象，而引用不可以改变<br>3.2引用可以直接操作对象，而指针需要解引<br>3.3引用++，和指针++意义完全不同<br>如果返回动态分配的对象或者内存，必须使用指针，引用可能产生内存泄漏<br>2.指针作为参数传递时：const修饰函数形参指针<br>告诉函数传入的形参不会发生变化。<br>当传入的是地址的话，最好使用const形参，否则const指针不能做实参。这样可以增加函数的兼容性<br>既兼容常指针和非常指针两种类型int</em> 和 *const int<br>3.类中的const—const成员函数，const类成员变量<br>const成员变量：类内定义，只在每个类对象初始化时候定义，不能直接初始化，依靠初始化成员。</p>
-<p>static成员变量：类内定义，类外实现。</p>
-<p>const成员函数：他暂时修改了类中this指针的状态，顶层和底层都为const指针，所以所指向的对象都无法修改。为有些不改变值的函数提供便利。</p>
-<p>4.顶层const和底层const<br>const *pi————底层const——指针指向常量</p>
-<p>*pi const ————顶层const——指针为常指针</p>
-<p>作用1：</p>
-<p>常量的底层const 不能赋值给 非常量的底层const<br>非常量的底层const = 常量的底层const 错误<br>c++<br>int num_c = 3;<br>const int *p_c = &num_c;  //p_c为底层const的指针<br>//int *p_d = p_c;          //错误，不能将底层const指针赋值给非底层const指针<br>const int *p_d = p_c;     //正确，可以将底层const指针复制给底层const指针<br>作用2：</p>
-<p>const_cast只能移除底层const对象的特性<br>底层const指针不能赋值给非底层const指针。<br>const_cast强制类型转换，只能移除底层const。</p>
-<p>5.extern关键词的作用<br>关键词extern用于声明全局变量和全局函数，让编译器可以跨文件找到他<br>为了兼容C++和C的混合编译。由于C++增加了重载函数，编译器会将函数名和形参生成一个中间变量，而C编译器不会考虑这个问题。为了解决编译器的兼容问题。<br>6.static关键词的作用<br>类外：</p>
-<p>隐藏函数，避免冲突——static变量和函数对其他源文件是隐藏的<br>静态对象只需要一次赋值，减少工作量<br>静态变量具有持久性，在程序退出时才会释放<br>类内：</p>
-<p>类中静态函数和成员变量是为整个类服务，不与单个类对象服务<br>静态成员变量类内声明，类外定义<br>类静态函数无需初始化类对象，直接可以调用。同时无类中非静态成员，需要通过辅助指针来实现全类的访问。（写过相机的类，回调函数为static）<br>C++11特性、类、多态<br>1.C++的封装、继承、多态<br>封装的作用：规定访问权限，保证数据的完整性和安全性。同时让代码更加直观</p>
-<p>继承的作用：继承是多态的前提，是C++面向对象的重要体现，泛型编程的前提保证</p>
-<p>在父类的基础上定义子类，升级和改造父类的功能，实现代码复用，可以很好的提高代码的复用率。<br>多态的作用：多态分为静态多态和动态多态。</p>
-<p>前者：主要依靠函数重载和函数模板、类模板实现。<br>后者：依靠子类对父类虚函数的重写，在使用父类指针指向子类对象时函数的动态绑定实现。<br>结果：提高代码的拓展性和维护性<br>2.左值引用和右值引用<br>左值引用：首先有明确地址的为左值，无的明确地址为右值。</p>
-<p>我们可以利用左值引用将左值转换为右值，这样就可以直接将左值引用作为函数的形参输入，避免一些不要要的临时对象拷贝和构造。<br>右值引用：顾名思义，是对右值的引用，还是右值</p>
-<p>C++利用右值引用是为了减少对象初始化时，所属需要的时间。我们可以理解成复制和剪切的关系。<br>通过移动构造，利用生命值周期短的右值来初始化对象。避免了不必要的构造和拷贝构造，释放等步骤。（指针直接指向自己）<br>补充：</p>
-<p>有些生命周期短的右值，可以通过move函数，将其变为右值，从而移动构造。<br>完美转发：函数输入的是左值或右值，输出值还保持原来的特性，它是完美的。<br>3.vector中push_back()和emplace_back()区别<br>C++中未加入右值引用时候，我们常常利用push_back来给容器插入元素：</p>
-<p>1.构造函数——构造这个临时变量<br>2.拷贝构造——将元素拷贝入容器<br>3.释放临时变量<br>加入右值引用后，push_back优化版本：</p>
-<p>1.构造函数——构造这个临时变量<br>2.移动构造——将元素转移到容器，无需释放<br>emplace_back()</p>
-<p>容器内原地构造——不需要拷贝和移动，节省了资源开销<br>4.泛型编程（静态多态）<br>泛型编程指的是满足多种类型的代码编写方式。静态的多态</p>
-<p>在C++中，模板是泛型编程的基础，模板是创建函数和类的公式。</p>
-<p>我们常用的泛型编程方式是，函数重载，函数模板和类模板</p>
-<p>标准函数库中的容器、迭代器、算法都是泛型编程很好的例子。<br>5.C++四种cast类型转换<br>const_cast ———— 用于移除类型const特性</p>
-<p>static_cast ———— 只能用于满足隐式类型转换间的类型，当用于类型下行转换时，不安全，如有的const类型无法转换。</p>
-<p>dynamic_cast ————用于父类指针向子类指针的转换，只能用于含有虚函数的类，只能转指针和引用，包含继承检查，所以是安全的</p>
-<p>reinterpret_cast ———— 几乎什么都能转换，但是不安全</p>
-<p>6.C++四种智能指针<br>作用：都是为了更好的管理堆上的资源——自动释放内存资源<br>方法：将指针放入管理的对象中，类似析构函数的调用，保证局部对象被析构从而释放资源<br>最常用：shared_ptr<br>auto_ptr，只能管理一个对象，不能在容器中使用<br>shared_ptr（引用计数型），但是要避免成环<br>优点：解决了多个智能指针间共享对象所有权的问题，也满足了容器对元素的要求，可以在STL容器中使用。<br>weak_ptr（弱引用，share的助手，配合share使用），解决share死锁问题<br>unique_ptr（独占型指针，只允许同一时间内一个智能指针指向该对象。当unique_ptr被销毁，其所指的对象也被销毁。显示了一种独占的思想）<br>7.父类析构函数为什么需要虚函数，而析构函数不是？<br>是为了更好的释放子类，防止在释放内存时产生内存泄漏。当父类指针指向子类时，如果父类析构函数不是虚函数，会导致子类释放释放的不彻底，导致内存泄漏</p>
-<p>同时虚函数也会产生额外的内存开销，所以没必要是不用的。</p>
-<p>虚函数的实现：</p>
-<p>在有虚函数的类中，类的最开始部分是一个虚函数表的指针，表中存放了虚函数的地址。<br>重写虚函数时会替换虚函数表中的地址）</p>
-<p>子类继承父类时也会继承其虚函数表，当子类重写父类中虚函数时，会将继承到的虚函数地址重新替换为新的重写地址。</p>
-<p>8.说一下析构函数？<br>析构函数在类对象消亡的时候，自动调用，用于释放内存。</p>
-<p>析构函数名称和构造函数相同，前方加取反号，不带任何返回值，不能被重载。<br>作为父类的类，析构函数必须是虚函数，防止内存泄漏<br>构造和析构的顺序依次ABBA。（A父类B子类）<br>9.说一下重载和重写？<br>都是C++多态的实现方式</p>
-<p>区别在于重载是静态编译时的多态性，而重写是运行时动态的多态性。<br>重载在一个类中：函数名相同的函数，但是形参列表不同。返回值没有要求。<br>重写子类父类中：子类继承父类，对父类中的虚函数进行重新定义。<br>10.说一下多态？<br>多态主要分为静态和动态两种。<br>静态多态主要靠重载和C++模板来实现，在编译时已经确定，需要程序员实例化。<br>动态多态主要靠虚函数来实现，虚函数在运行期间动态绑定子类对象。<br>实现了动态联编，使程序运行效率更高，更容易维护和操作。</p>
-<p>11.说一下RTTI—Run time type identification<br>RTTI意思：运行时类型识别—（静态类型在程序运行时，不会发生变化，所以不需要）<br>C++引入这个机制：目的让程序在运行能够根据父类的指针或引用 来获得该指针或引用所指对象的实际类型。<br>C++主要通过typeid运算符和dynamic_cast运算符来表现<br>typeid：返回其表达式或类型名的实际类型<br>dynamic_cast：实现父类指针与子类指针相互转换（向下），若失败返回NULL—转换存在不安全，其可以保证<br>12.拷贝构造函数Person A（a）和拷贝赋值函数 A = B 的形参可以进行值传递吗<br>不可以，（必须是引用&amp;）这样的话会无限循环下去。</p>
-<p>原因：为了调用拷贝构造进行值传递，必须创建它的副本，这样导致无线调用构造函数，导致栈溢出<br>13.说一下C++——struct和class的区别<br>在实际的使用中：<br>我们常常：struct适合看成一个数据结构的实现体——零件信息，而class适合看成一个对象的实现体——相机类，各种接口。<br>默认继承权限和访问权限：<br>struct：public<br>class：private<br>类模板等关键字也只能使用class<br>C++保留struct是为了更好得去兼容C语言<br>14.说一下C++11有哪些新特性<br>auto关键字，编译器可以根据初始值自动推导出参数类型<br>nullptr关键字，减少二义性，C++中的空指针关键字，用于区分NULL和0<br>智能指针，shared_ptr,auto_ptr，用于解决内存管理问题<br>初始化列表，对类进行初始化<br>右值引用：基于右值引用可以实现移动 语句和完美转发，消除没有必要的资源拷贝，资源开销<br>atomic原子操作用于多线程资源互斥操作<br>新增STL容器array以及tuple<br>匿名函数<br>15.为什么构造函数不能是虚函数？<br>存储角度：首先虚函数是通过虚函数表来调用的，而对象还没有实例化，根本不存在虚函数表，如何去调用函数。</p>
-<p>使用角度：虚函数是在类型不明确的情况下，通过父类指针指向子类对象从而实现虚函数的重写。但是构造函数是需要在类型明确的情况下调用的，两者是矛盾的。（一个明确类型，一个不是）</p>
- 
+  <h1 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h1><h2 id="static的作用"><a href="#static的作用" class="headerlink" title="static的作用"></a>static的作用</h2><pre><code>类外：
+1、隐藏函数，避免冲突——static变量和函数对其他源文件是隐藏的
+2、静态对象只需要一次赋值，减少工作量
+3、态变量具有持久性，在程序退出时才会释放
+类内：
+1、类中静态函数和成员变量是为整个类服务，不与单个类对象服务
+2、静态成员变量类内声明，类外定义
+3、类静态函数无需初始化类对象，直接可以调用。</code></pre>
+<h2 id="封装、继承、多态"><a href="#封装、继承、多态" class="headerlink" title="封装、继承、多态"></a>封装、继承、多态</h2><pre><code>封装的作用：规定访问权限，保证数据的完整性和安全性。同时让代码更加直观
+继承的作用：继承是多态的前提，是C++面向对象的重要体现，泛型编程的前提保证
+在父类的基础上定义子类，升级和改造父类的功能，实现代码复用，可以很好的提高代码的复用率。
+多态的作用：多态分为静态多态和动态多态。
+    前者：主要依靠函数重载和函数模板、类模板实现。
+    后者：依靠子类对父类虚函数的重写，在使用父类指针指向子类对象时函数的动态绑定实现。
+    结果：提高代码的拓展性和维护性</code></pre>
+<h2 id="右值引用"><a href="#右值引用" class="headerlink" title="右值引用"></a>右值引用</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a&#x3D;10;</span><br><span class="line">int &amp;b&#x3D;a;   &#x2F;&#x2F;左值引用</span><br><span class="line">int &amp;&amp;c&#x3D;10;  &#x2F;&#x2F;右值引用</span><br></pre></td></tr></table></figure>
+<pre><code>可以取地址的，有名字的，非临时的就是左值；
+不能取地址的，没有名字的，临时的就是右值；
+右值引用的存在并不是为了取代左值引用，而是充分利用右值(特别是临时对象)的构造来减少对象构造和构操作以达到提高效率的目的。</code></pre>
+<h2 id="vector中push-back-和emplace-back-区别"><a href="#vector中push-back-和emplace-back-区别" class="headerlink" title="vector中push_back()和emplace_back()区别"></a>vector中push_back()和emplace_back()区别</h2><pre><code>push_back:
+1、构造函数——构造临时变量
+2、移动函数——将这个元素移动到容器，无需释放
+emplace_back():
+容器内原地构造——不需要拷贝和移动，节省资源的开销</code></pre>
+<h2 id="泛型编程"><a href="#泛型编程" class="headerlink" title="泛型编程"></a>泛型编程</h2><pre><code>泛型编程指的是满足多种类型的代码编写方式。静态多态
+在C++中，模板是泛型编程的基础，模板是创建函数和类的公式
+我们常用的泛型编程方式是，函数重载，函数模板和类模板
+标准函数库中的容器、迭代器、算法都是泛型编程很好的例子。</code></pre>
+<h2 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h2><pre><code>作用：
+为了更好的管理堆上的内存——自动释放内存资源
+实现：（计数）
+当一个对象指向一个内存时，计数加1，当对象释放的时候计数减1；当计数为0时，该内存释放。
+种类：
+share_ptr、weak_ptr、unique_ptr。
+各自的特点：
+1、shared_ptr（引用计数型），但是要避免成环
+    优点：解决了多个智能指针间共享对象所有权的问题，也满足了容器对元素的要求，可以在STL容器中使用。
+2、weak_ptr（弱引用，share的助手，配合share使用），解决share死锁问题
+3、unique_ptr（独占型指针，只允许同一时间内一个智能指针指向该对象。当unique_ptr被销毁，其所指的对象也被销毁。显示了一种独占的思想）</code></pre>
+<h2 id="父类析构函数为什么需要虚函数，而子类析构函数不是？"><a href="#父类析构函数为什么需要虚函数，而子类析构函数不是？" class="headerlink" title="父类析构函数为什么需要虚函数，而子类析构函数不是？"></a>父类析构函数为什么需要虚函数，而子类析构函数不是？</h2><pre><code>1、为了更好的释放子类，防止在释放内存时产生内存泄漏。当父类指针指向子类时，如果父类析构函数不是虚函数，会导致子类释放释放的不彻底，导致内存泄漏
+2、同时虚函数也会产生额外的内存开销，所以没有被继承的类的析构函数可以不为虚函数。</code></pre>
+<h2 id="虚函数的实现"><a href="#虚函数的实现" class="headerlink" title="虚函数的实现"></a>虚函数的实现</h2><pre><code>1、有虚函数的类中，类的最开始部分是一个虚函数表的指针，表中存放了虚函数的地址。
+2、重写虚函数时会替换虚函数表中的地址
+3、子类继承父类时也会继承其虚函数表，当子类重写父类中虚函数时，会将继承到的虚函数地址重新替换为新的重写地址</code></pre>
+<h2 id="auto-ptr智能指针为什么被摒弃"><a href="#auto-ptr智能指针为什么被摒弃" class="headerlink" title="auto_ptr智能指针为什么被摒弃"></a>auto_ptr智能指针为什么被摒弃</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_ptr&lt;string&gt; ps1 (new string (&quot;hello world!\n&quot;))</span><br><span class="line">auto_ptr&lt;string&gt; ps2</span><br><span class="line">ps2 &#x3D; ps1</span><br></pre></td></tr></table></figure>
+<pre><code>如果两个auto_ptr指针指向同一个对象时，当该对象的生存周期结束后，系统会调用析构函数，这样导致的结果是程序对同一个对象删除了2次，造成程序出错。</code></pre>
+<h2 id="拷贝构造函数Person-A（a）和拷贝赋值函数-A-B-的形参可以进行值传递吗"><a href="#拷贝构造函数Person-A（a）和拷贝赋值函数-A-B-的形参可以进行值传递吗" class="headerlink" title="拷贝构造函数Person A（a）和拷贝赋值函数 A = B 的形参可以进行值传递吗"></a>拷贝构造函数Person A（a）和拷贝赋值函数 A = B 的形参可以进行值传递吗</h2><pre><code>不可以：必须是&amp;，不然会无限循环下去
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Example()</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Example(int a):aa(a) &#123;&#125;    &#x2F;&#x2F;构造函数</span><br><span class="line"> </span><br><span class="line">	Example(Example ex)        &#x2F;&#x2F;拷贝构造函数（值传递参数）</span><br><span class="line">&#123;</span><br><span class="line">    aa &#x3D; ex.aa;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">	int aa;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Example e1(10);</span><br><span class="line">	Example e2 &#x3D; e1;</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+在函数中，因为是值传递所以又需要用e1的值拷贝创建一个副本对象ex，则又需要调用拷贝构造函数ex.Example(e1)
+这样就会无限重复下去来完成创建副本ex，无限调用ex.Example(e1)
+这就是为什么拷贝构造函数不能使用值传递的形参原因。</code></pre>
+<h2 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h2> 
       <!-- reward -->
       
     </div>
@@ -207,6 +202,8 @@
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
     </footer>
   </div>
 
@@ -486,10 +483,6 @@
 <!-- ClickBoom1 -->
 
 <!-- ClickBoom2 -->
-
-
-<script src="/js/clickBoom2.js"></script>
-
 
 <!-- CodeCopy -->
 
