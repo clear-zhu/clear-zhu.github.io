@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+     Hexo
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="/images/cover5.jpg" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">Hexo</a></h1>
+      <div id="subtitle-box">
+        
+          <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+
+<!-- Subtitle -->
+
+<div id="main">
+  <section class="outer">
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-题解思路"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/09/17/%E9%A2%98%E8%A7%A3%E6%80%9D%E8%B7%AF/"
+    >题解思路</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/09/17/%E9%A2%98%E8%A7%A3%E6%80%9D%E8%B7%AF/" class="article-date">
+  <time datetime="2020-09-17T06:16:04.000Z" itemprop="datePublished">2020-09-17</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h2><h3 id="0-1背包"><a href="#0-1背包" class="headerlink" title="0-1背包"></a>0-1背包</h3><h4 id="0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。"><a href="#0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。" class="headerlink" title="0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。"></a>0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">分析：</span><br><span class="line">二维数组存放结果F[i][j]：表示第i件物品放入后，剩下j的容量所表示的目标值（价格、魅力）</span><br><span class="line">特殊情况：i件商品超过剩余重量j，F[i][j]=F[i-1][j];</span><br><span class="line">放入物品i：@1:  F[i][j]=F[i-1][j-w[i]]+v[i]    w[i]表示i商品的重量，v[i]表示i的价格，或魅力</span><br><span class="line">不放入物品i：@2  ：F[i][j]=f[i-1][j];</span><br><span class="line">结论： F[i][j]=max(@1,@2)  两者间的较大者</span><br><span class="line">状态转移方程为：f[i][j] = max（f[i - 1][j] ，f[i - 1][j - w[i]] + v[i]）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define V 500</span><br><span class="line">using namespace std;</span><br><span class="line">int w[20 + 1];</span><br><span class="line">int v[20 + 1];</span><br><span class="line">int f[20 + 1][V + 1];</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cout &lt;&lt; &quot;请输入物品个数:&quot;;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; </span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;请输入背包容量:&quot;;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">            if (w[i] &gt; j) &#123;</span><br><span class="line">                f[i][j] = f[i - 1][j];</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                f[i][j] = f[i - 1][j] &gt; f[i - 1][j - w[i]] + v[i] ? f[i - 1][j] : f[i - 1][j - weight[i]] + value[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[n][m] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><h3 id="不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。"><a href="#不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。" class="headerlink" title="不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。"></a>不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">分析：</span><br><span class="line">二维数组存放结果F[i][j]：表示第i件物品放入后，占用j的容量所表示的目标值（价格、魅力）</span><br><span class="line">特殊情况：i件商品超过剩余重量j，F[i][j]=F[i-1][j];</span><br><span class="line">放入物品i：@1:  F[i][j]=F[i-1][j-w[i]]+v[i]    w[i]表示i商品的重量，v[i]表示i的价格，或魅力</span><br><span class="line">不放入物品i：@2  ：F[i][j]=f[i-1][j];</span><br><span class="line"></span><br><span class="line">以上是0-1背包的分析，在0-1背包的基础上，完全背包就是增加了第i个物品个数的选择的问题，所以，只要满足，0&lt;=k*w[i]&lt;=j;这个条件，就是0-1背包的问题了；</span><br><span class="line">放入物品k个i：@1:  F[i][j]=F[i-1][j-k*w[i]]+v[i]*k</span><br><span class="line">结论： F[i][j]=max(@1,@2)  两者间的较大者</span><br><span class="line"></span><br><span class="line">相对的状态转移方程为：</span><br><span class="line">f[i][j] = max（f[i][j] ，f[i-1][j-k*w[i]]+v[i]*k)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define V 500</span><br><span class="line">using namespace std;</span><br><span class="line">int w[20 + 1];</span><br><span class="line">int v[20 + 1];</span><br><span class="line">int f[20 + 1][V + 1];</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cout &lt;&lt; &quot;请输入物品个数:&quot;;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; </span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;请输入背包容量:&quot;;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">            for (int k = 0; k * w[i] &lt;= j; k++)&#123;</span><br><span class="line">            	f[i][j]=max(f[i][j],f[i-1][j-k*w[i]]+k*v[i]);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[n][m] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h2><h3 id="有N种物品和一个容量为T的背包，第i种物品最多有M-i-件可用，价值为P-i-，体积为V-i-，求解：选哪些物品放入背包，可以使得这些物品的价值最大，并且体积总和不超过背包容量。"><a href="#有N种物品和一个容量为T的背包，第i种物品最多有M-i-件可用，价值为P-i-，体积为V-i-，求解：选哪些物品放入背包，可以使得这些物品的价值最大，并且体积总和不超过背包容量。" class="headerlink" title="有N种物品和一个容量为T的背包，第i种物品最多有M[i]件可用，价值为P[i]，体积为V[i]，求解：选哪些物品放入背包，可以使得这些物品的价值最大，并且体积总和不超过背包容量。"></a>有N种物品和一个容量为T的背包，第i种物品最多有M[i]件可用，价值为P[i]，体积为V[i]，求解：选哪些物品放入背包，可以使得这些物品的价值最大，并且体积总和不超过背包容量。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">以上是0-1完全背包的分析，在完全背包的基础上，多重背包就是增加了第i个物品个数的选择和限制的问题，所以，只要满足，0&lt;=k*w[i]&lt;=j，k&lt;=wi[i];这个条件，就是0-1背包的问题了；</span><br><span class="line">放入物品k个i：@1:  F[i][j]=F[i-1][j-k*w[i]]+v[i]*k</span><br><span class="line">结论： F[i][j]=max(@1,@2)  两者间的较大者</span><br><span class="line"></span><br><span class="line">相对的状态转移方程为：</span><br><span class="line">f[i][j] = max（f[i][j] ，f[i-1][j-k*w[i]]+v[i]*k)</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define V 500</span><br><span class="line">using namespace std;</span><br><span class="line">int w[20 + 1];</span><br><span class="line">int v[20 + 1];</span><br><span class="line">int wi[20+ 1];</span><br><span class="line">int f[20 + 1][V + 1];</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cout &lt;&lt; &quot;请输入物品个数:&quot;;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; </span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; w[i] &gt;&gt; v[i] &gt;&gt; wi[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;请输入背包容量:&quot;;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">            for (int k = 0; k * w[i] &lt;= j &amp;&amp; k &lt;= wi[i]; k++)&#123;  </span><br><span class="line">            	f[i][j]=max(f[i][j],f[i-1][j-k*w[i]]+k*v[i]);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[n][m] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="查询连接问题"><a href="#查询连接问题" class="headerlink" title="查询连接问题"></a>查询连接问题</h2><p>问题描述：<br>有n个岛屿，其中m条连接，小明同学询问q次，问每次查询的结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">分析：将所有连接的岛屿做标记，标记为最小岛屿编号</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	int n , m , g ;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; g;</span><br><span class="line"></span><br><span class="line">	vector&lt;int&gt; v(n+1,0);</span><br><span class="line">	for (int i = 0; i &lt; n + 1;i++) &#123;</span><br><span class="line">		v[i] = i;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	for (int i = 0; i &lt; m; i++) &#123;</span><br><span class="line">		int a, b;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">		int t = min(v[a], v[b]);</span><br><span class="line">		for (int i = 0; i &lt; n + 1; i++) &#123;</span><br><span class="line">			if (v[i] == v[a] || v[i] == v[b]) &#123;</span><br><span class="line">				v[i] = t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	while (g--)</span><br><span class="line">	&#123;</span><br><span class="line">		int a, b;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">		if (v[a] == v[b]) &#123;</span><br><span class="line">			cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+</article>
+
+    
+    <article
+  id="post-机器人项目"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/09/17/%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%A1%B9%E7%9B%AE/"
+    >机器人项目</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/09/17/%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%A1%B9%E7%9B%AE/" class="article-date">
+  <time datetime="2020-09-17T06:16:00.000Z" itemprop="datePublished">2020-09-17</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="项目目标"><a href="#项目目标" class="headerlink" title="项目目标"></a>项目目标</h2><p>   基于两个深度相机（Inter realsense D435）， ROV 遥控潜水器机械臂（ARM 5E Micro），上位机等硬件设备设计了机械臂自动定位抓取的系统。通过对目标物体的三维坐标进行定位和转换，结合人的动作映射和机械臂的自动控制从而实现目标物体的抓取工作。</p>
+<h3 id="相机开发"><a href="#相机开发" class="headerlink" title="相机开发"></a>相机开发</h3><p>获取目标物的相机坐标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="通讯"><a href="#通讯" class="headerlink" title="通讯"></a>通讯</h3><p>机械臂与上位机的通讯</p>
+<h3 id="标定"><a href="#标定" class="headerlink" title="标定"></a>标定</h3><p>相机标定，手眼标定</p>
+<h4 id="最简单的方式"><a href="#最简单的方式" class="headerlink" title="最简单的方式"></a>最简单的方式</h4> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+</article>
+
+    
+    <article
+  id="post-Untitled"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/09/17/Untitled/"
+    >Hexo 入门</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/09/17/Untitled/" class="article-date">
+  <time datetime="2020-09-17T01:36:00.000Z" itemprop="datePublished">2020-09-17</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="博客的编写方式"><a href="#博客的编写方式" class="headerlink" title="博客的编写方式"></a>博客的编写方式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;label style =&quot;color: red&quot;&gt;   //将文字改成红色</span><br><span class="line">我不知道 </span><br><span class="line">&lt;/label&gt;</span><br><span class="line"></span><br><span class="line">&lt;font size=4&gt;            //设置文字的大小</span><br><span class="line">  你去看看其他的方法</span><br><span class="line">  &lt;/front&gt;</span><br><span class="line"></span><br><span class="line">![](/img/文件保存内容.jpg)  //插入文件 /img/文件保存内容.jpg 地址为：F:\资料\Blog\新建文件夹\Hexo\source\img</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Hexo的搭建"><a href="#Hexo的搭建" class="headerlink" title="Hexo的搭建"></a>Hexo的搭建</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://handsomesuperred.github.io/archives/</span><br></pre></td></tr></table></figure>
+
+<h3 id="Hexo中admin插件的安装"><a href="#Hexo中admin插件的安装" class="headerlink" title="Hexo中admin插件的安装"></a>Hexo中admin插件的安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br></pre></td></tr></table></figure> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+</article>
+
+    
+    <article
+  id="post-C-基础"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/09/11/C-%E5%9F%BA%E7%A1%80/"
+    >基础知识</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/09/11/C-%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2020-09-11T06:11:00.000Z" itemprop="datePublished">2020-09-11</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h1><h2 id="static的作用"><a href="#static的作用" class="headerlink" title="static的作用"></a>static的作用</h2><pre><code>类外：
+1、隐藏函数，避免冲突——static变量和函数对其他源文件是隐藏的
+2、静态对象只需要一次赋值，减少工作量
+3、态变量具有持久性，在程序退出时才会释放
+类内：
+1、类中静态函数和成员变量是为整个类服务，不与单个类对象服务
+2、静态成员变量类内声明，类外定义
+3、类静态函数无需初始化类对象，直接可以调用。
+</code></pre>
+<h2 id="封装、继承、多态"><a href="#封装、继承、多态" class="headerlink" title="封装、继承、多态"></a>封装、继承、多态</h2><pre><code>封装的作用：规定访问权限，保证数据的完整性和安全性。同时让代码更加直观
+继承的作用：继承是多态的前提，是C++面向对象的重要体现，泛型编程的前提保证
+在父类的基础上定义子类，升级和改造父类的功能，实现代码复用，可以很好的提高代码的复用率。
+多态的作用：多态分为静态多态和动态多态。
+    前者：主要依靠函数重载和函数模板、类模板实现。
+    后者：依靠子类对父类虚函数的重写，在使用父类指针指向子类对象时函数的动态绑定实现。
+    结果：提高代码的拓展性和维护性
+</code></pre>
+<h2 id="右值引用"><a href="#右值引用" class="headerlink" title="右值引用"></a>右值引用</h2> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a=10;</span><br><span class="line">int &amp;b=a;   //左值引用</span><br><span class="line">int &amp;&amp;c=10;  //右值引用</span><br></pre></td></tr></table></figure>
+<pre><code>可以取地址的，有名字的，非临时的就是左值；
+不能取地址的，没有名字的，临时的就是右值；
+右值引用的存在并不是为了取代左值引用，而是充分利用右值(特别是临时对象)的构造来减少对象构造和构操作以达到提高效率的目的。
+</code></pre>
+<h2 id="vector中push-back-和emplace-back-区别"><a href="#vector中push-back-和emplace-back-区别" class="headerlink" title="vector中push_back()和emplace_back()区别"></a>vector中push_back()和emplace_back()区别</h2><pre><code>push_back:
+1、构造函数——构造临时变量
+2、移动函数——将这个元素移动到容器，无需释放
+emplace_back():
+容器内原地构造——不需要拷贝和移动，节省资源的开销
+</code></pre>
+<h2 id="泛型编程"><a href="#泛型编程" class="headerlink" title="泛型编程"></a>泛型编程</h2><pre><code>泛型编程指的是满足多种类型的代码编写方式。静态多态
+在C++中，模板是泛型编程的基础，模板是创建函数和类的公式
+我们常用的泛型编程方式是，函数重载，函数模板和类模板
+标准函数库中的容器、迭代器、算法都是泛型编程很好的例子。
+</code></pre>
+<h2 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h2><pre><code>作用：
+为了更好的管理堆上的内存——自动释放内存资源
+实现：（计数）
+当一个对象指向一个内存时，计数加1，当对象释放的时候计数减1；当计数为0时，该内存释放。
+种类：
+share_ptr、weak_ptr、unique_ptr。
+各自的特点：
+1、shared_ptr（引用计数型），但是要避免成环
+    优点：解决了多个智能指针间共享对象所有权的问题，也满足了容器对元素的要求，可以在STL容器中使用。
+2、weak_ptr（弱引用，share的助手，配合share使用），解决share死锁问题
+3、unique_ptr（独占型指针，只允许同一时间内一个智能指针指向该对象。当unique_ptr被销毁，其所指的对象也被销毁。显示了一种独占的思想）
+
+    
+</code></pre>
+<h2 id="父类析构函数为什么需要虚函数，而子类析构函数不是？"><a href="#父类析构函数为什么需要虚函数，而子类析构函数不是？" class="headerlink" title="父类析构函数为什么需要虚函数，而子类析构函数不是？"></a>父类析构函数为什么需要虚函数，而子类析构函数不是？</h2><pre><code>1、为了更好的释放子类，防止在释放内存时产生内存泄漏。当父类指针指向子类时，如果父类析构函数不是虚函数，会导致子类释放释放的不彻底，导致内存泄漏
+2、同时虚函数也会产生额外的内存开销，所以没有被继承的类的析构函数可以不为虚函数。
+</code></pre>
+<h2 id="虚函数的实现"><a href="#虚函数的实现" class="headerlink" title="虚函数的实现"></a>虚函数的实现</h2><pre><code>1、有虚函数的类中，类的最开始部分是一个虚函数表的指针，表中存放了虚函数的地址。
+2、重写虚函数时会替换虚函数表中的地址
+3、子类继承父类时也会继承其虚函数表，当子类重写父类中虚函数时，会将继承到的虚函数地址重新替换为新的重写地址
+</code></pre>
+<h2 id="auto-ptr智能指针为什么被摒弃"><a href="#auto-ptr智能指针为什么被摒弃" class="headerlink" title="auto_ptr智能指针为什么被摒弃"></a>auto_ptr智能指针为什么被摒弃</h2> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_ptr&lt;string&gt; ps1 (new string (&quot;hello world!\n&quot;))</span><br><span class="line">auto_ptr&lt;string&gt; ps2</span><br><span class="line">ps2 = ps1</span><br></pre></td></tr></table></figure>
+<pre><code>如果两个auto_ptr指针指向同一个对象时，当该对象的生存周期结束后，系统会调用析构函数，这样导致的结果是程序对同一个对象删除了2次，造成程序出错。
+</code></pre>
+<h2 id="拷贝构造函数Person-A（a）和拷贝赋值函数-A-B-的形参可以进行值传递吗"><a href="#拷贝构造函数Person-A（a）和拷贝赋值函数-A-B-的形参可以进行值传递吗" class="headerlink" title="拷贝构造函数Person A（a）和拷贝赋值函数 A = B 的形参可以进行值传递吗"></a>拷贝构造函数Person A（a）和拷贝赋值函数 A = B 的形参可以进行值传递吗</h2><pre><code>不可以：必须是&amp;，不然会无限循环下去
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Example()</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Example(int a):aa(a) &#123;&#125;    //构造函数</span><br><span class="line"> </span><br><span class="line">	Example(Example ex)        //拷贝构造函数（值传递参数）</span><br><span class="line">&#123;</span><br><span class="line">    aa = ex.aa;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">	int aa;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Example e1(10);</span><br><span class="line">	Example e2 = e1;</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+在函数中，因为是值传递所以又需要用e1的值拷贝创建一个副本对象ex，则又需要调用拷贝构造函数ex.Example(e1)
+这样就会无限重复下去来完成创建副本ex，无限调用ex.Example(e1)
+这就是为什么拷贝构造函数不能使用值传递的形参原因。
+</code></pre>
+<h2 id="线程池、内存池"><a href="#线程池、内存池" class="headerlink" title="线程池、内存池"></a>线程池、内存池</h2> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+   
+</article>
+
+    
+    <article
+  id="post-jiyong"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/08/15/jiyong/"
+    >QR</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/08/15/jiyong/" class="article-date">
+  <time datetime="2020-08-15T04:48:00.000Z" itemprop="datePublished">2020-08-15</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+   
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+</article>
+
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020-2021
+        <i class="ri-heart-fill heart_icon"></i> John Doe
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">文档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>
