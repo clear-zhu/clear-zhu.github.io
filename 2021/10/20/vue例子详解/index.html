@@ -1,47 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>vue例子详解 | lyyourc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-<link rel="stylesheet" href="/css/app.css">
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
-  
+<!--Description-->
+
+
+
+    <meta name="description" content="参考项目登录界面改写学生管理项目参考博客：https://www.cnblogs.com/hetutu-5238/p/9456016.html
+主要的项目结构upload successful
+导包在创建好的vue项目中，导入所需要的包
+123456npm install --save axios "/>
+
+
+<!--Author-->
+
+    <meta name="author" content="John Doe"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="vue例子详解"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="参考项目登录界面改写学生管理项目参考博客：https://www.cnblogs.com/hetutu-5238/p/9456016.html
+主要的项目结构upload successful
+导包在创建好的vue项目中，导入所需要的包
+123456npm install --save axios "/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>vue例子详解 | Hexo</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
 <meta name="generator" content="Hexo 5.4.0"></head>
+<!-- Head tag -->
 
 <body>
-  <nav class="app-nav">
-  
-    
-      <a href="/.">home</a>
-    
-  
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">Hexo</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
 </nav>
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2021/10/20/vue%E4%BE%8B%E5%AD%90%E8%AF%A6%E8%A7%A3/">vue例子详解</a>
-  </h1>
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-  <section class="article-meta">
-    <p class="article-date">October 20 2021</p>
-  </section>
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>vue例子详解</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-  <section class="article-entry">
-    <h3 id="参考项目"><a href="#参考项目" class="headerlink" title="参考项目"></a>参考项目</h3><p>登录界面改写学生管理项目<br>参考博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hetutu-5238/p/9456016.html">https://www.cnblogs.com/hetutu-5238/p/9456016.html</a></p>
-<h4 id="主要的项目结构"><a href="#主要的项目结构" class="headerlink" title="主要的项目结构"></a>主要的项目结构</h4><p><img src="/images/pasted-31.png" alt="upload successful"></p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="fas fa-user-edit"></i>
+        John Doe
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2021-10-20
+    
+    <!-- word count and read count -->
+    
+
+    
+
+    
+</span>  
+                
+                <h3 id="参考项目"><a href="#参考项目" class="headerlink" title="参考项目"></a>参考项目</h3><p>登录界面改写学生管理项目<br>参考博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hetutu-5238/p/9456016.html">https://www.cnblogs.com/hetutu-5238/p/9456016.html</a></p>
+<h4 id="主要的项目结构"><a href="#主要的项目结构" class="headerlink" title="主要的项目结构"></a>主要的项目结构</h4><p><div class="img-item" data-src="/images/pasted-31.png" data-sub-html=".caption"><img src="/images/pasted-31.png" alt="upload successful"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">upload successful</span></div></div></p>
 <h4 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h4><p>在创建好的vue项目中，导入所需要的包</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install --save axios //用来发送请求的包 ajax</span><br><span class="line"></span><br><span class="line">npm install element-ui -S  //element-ui 是饿了吗团队开发的ui包</span><br><span class="line">npm install qs -S // 传到后台的数据防止接收不到</span><br><span class="line"></span><br><span class="line">npm install vue-router //vue路由</span><br></pre></td></tr></table></figure>
 <h3 id="涉及到的文件"><a href="#涉及到的文件" class="headerlink" title="涉及到的文件"></a>涉及到的文件</h3><p>src/main.js<br>src/route/index.js<br>src/api/api.js<br>src/api/index.js<br>src/components/Login.vue<br>src/components/home.vue</p>
@@ -49,81 +171,232 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element-ui -S  //运行时依赖</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//一个.vue文件就是一个组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  //存放的是页面结构，代表它的html结构有且只有一个根节点</span><br><span class="line">&lt;template&gt;</span><br><span class="line"></span><br><span class="line">//逻辑结构及数据对象</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  //导出一个对象，对象里是组件内容</span><br><span class="line">&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">	//页面的样式内容</span><br><span class="line">&lt;style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p><img src="%5Cimages%5Cpasted-32.png" alt="upload successful"></p>
+<p><div class="img-item" data-src="%5Cimages%5Cpasted-32.png" data-sub-html=".caption"><img src="%5Cimages%5Cpasted-32.png" alt="upload successful"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">upload successful</span></div></div></p>
 <h4 id="src-main-js代码"><a href="#src-main-js代码" class="headerlink" title="src/main.js代码"></a>src/main.js代码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// The Vue build version to load with the `import` command</span><br><span class="line">// (runtime-only or standalone) has been set in webpack.base.conf with an alias.</span><br><span class="line">import Vue from &#x27;vue&#x27;</span><br><span class="line">import App from &#x27;./App&#x27;</span><br><span class="line">import router from &#x27;./router&#x27;</span><br><span class="line"></span><br><span class="line">//引入elemen-u控件</span><br><span class="line">import ElementUI from &#x27;element-ui&#x27;</span><br><span class="line">import &#x27;element-ui/lib/theme-chalk/index.css&#x27; </span><br><span class="line">Vue.config.productionTip = false</span><br><span class="line">//使用use命令后才起作用</span><br><span class="line">Vue.use(ElementUI)</span><br><span class="line"></span><br><span class="line">/* eslint-disable no-new */</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &#x27;#app&#x27;,</span><br><span class="line">  router,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: &#x27;&lt;App/&gt;&#x27;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="api"><a href="#api" class="headerlink" title="api"></a>api</h4>
-  </section>
-</article>
+            </div>
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> lyyourc </p>
-      <p class="subtitle"> You Are The JavaScript In My HTML </p>
-    <div>
-  </section>
+            <!-- Post information -->
+            
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+                <li class="previous page-item d-inline"><a href="/2021/11/04/hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8/" class="page-link float-left">&larr;  Newer</a></li>
+            
+            
+                <li class="next page-item d-inline"><a href="/2021/10/20/Java-vue%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/" class="page-link float-right">Older  &rarr;</a></li>
+            
+        </ul>
+    </div>
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text= id="参考项目"><a href=""
->
-  Tweet
-</a>
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
+            
+                <!-- Comments -->
+                
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+                
 
-  return t;
-}(document, "script", "twitter-wjs"));
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">Expand all</span><span class="close-text" style="display: none;">Collapse all</span></a>
+                <a class="back-to-top d-block py-1" href="#">Back to top</a>
+                <a class="go-to-bottom d-block py-1" href="#">Go to bottom</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/archives">
+                                
+                                    Archives
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/categories">
+                                
+                                    Categories
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/about">
+                                
+                                    About
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; -2021 
+                    <a rel="external" class="copyright-link" href="" target="_blank">John Doe</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
 </script>
 
-  </section>
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="Searching Keywords..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
 </div>
 
-
-  
-    
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-<script>
-  var disqus_shortname = 'drakeleung';
-  
-  var disqus_url = 'http://example.com/2021/10/20/vue%E4%BE%8B%E5%AD%90%E8%AF%A6%E8%A7%A3/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
-
-  
-</main>
 
 </body>
 </html>

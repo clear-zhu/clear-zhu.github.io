@@ -1,46 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>题解思路 | lyyourc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  
-<link rel="stylesheet" href="/css/app.css">
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
-  
+<!--Description-->
+
+
+
+    <meta name="description" content="背包问题0-1背包0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。12345678910111213141516171819202122232425262728293031323334353637分析：二维数组存放结果F[i][j]：表示第i件物品放入后"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="John Doe"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="题解思路"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="背包问题0-1背包0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。12345678910111213141516171819202122232425262728293031323334353637分析：二维数组存放结果F[i][j]：表示第i件物品放入后"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>题解思路 | Hexo</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
 <meta name="generator" content="Hexo 5.4.0"></head>
+<!-- Head tag -->
 
 <body>
-  <nav class="app-nav">
-  
-    
-      <a href="/.">home</a>
-    
-  
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">Hexo</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
 </nav>
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2020/09/17/%E9%A2%98%E8%A7%A3%E6%80%9D%E8%B7%AF/">题解思路</a>
-  </h1>
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-  <section class="article-meta">
-    <p class="article-date">September 17 2020</p>
-  </section>
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>题解思路</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-  <section class="article-entry">
-    <h2 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h2><h3 id="0-1背包"><a href="#0-1背包" class="headerlink" title="0-1背包"></a>0-1背包</h3><h4 id="0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。"><a href="#0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。" class="headerlink" title="0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。"></a>0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">分析：</span><br><span class="line">二维数组存放结果F[i][j]：表示第i件物品放入后，剩下j的容量所表示的目标值（价格、魅力）</span><br><span class="line">特殊情况：i件商品超过剩余重量j，F[i][j]=F[i-1][j];</span><br><span class="line">放入物品i：@1:  F[i][j]=F[i-1][j-w[i]]+v[i]    w[i]表示i商品的重量，v[i]表示i的价格，或魅力</span><br><span class="line">不放入物品i：@2  ：F[i][j]=f[i-1][j];</span><br><span class="line">结论： F[i][j]=max(@1,@2)  两者间的较大者</span><br><span class="line">状态转移方程为：f[i][j] = max（f[i - 1][j] ，f[i - 1][j - w[i]] + v[i]）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define V 500</span><br><span class="line">using namespace std;</span><br><span class="line">int w[20 + 1];</span><br><span class="line">int v[20 + 1];</span><br><span class="line">int f[20 + 1][V + 1];</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cout &lt;&lt; &quot;请输入物品个数:&quot;;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; </span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;请输入背包容量:&quot;;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">            if (w[i] &gt; j) &#123;</span><br><span class="line">                f[i][j] = f[i - 1][j];</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                f[i][j] = f[i - 1][j] &gt; f[i - 1][j - w[i]] + v[i] ? f[i - 1][j] : f[i - 1][j - weight[i]] + value[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[n][m] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="fas fa-user-edit"></i>
+        John Doe
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2020-09-17
+    
+    <!-- word count and read count -->
+    
+
+    
+
+    
+</span>  
+                
+                <h2 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h2><h3 id="0-1背包"><a href="#0-1背包" class="headerlink" title="0-1背包"></a>0-1背包</h3><h4 id="0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。"><a href="#0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。" class="headerlink" title="0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。"></a>0-1背包问题是指每一种物品都只有一件，可以选择放或者不放。现在假设有n件物品，背包承重为m。</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">分析：</span><br><span class="line">二维数组存放结果F[i][j]：表示第i件物品放入后，剩下j的容量所表示的目标值（价格、魅力）</span><br><span class="line">特殊情况：i件商品超过剩余重量j，F[i][j]=F[i-1][j];</span><br><span class="line">放入物品i：@1:  F[i][j]=F[i-1][j-w[i]]+v[i]    w[i]表示i商品的重量，v[i]表示i的价格，或魅力</span><br><span class="line">不放入物品i：@2  ：F[i][j]=f[i-1][j];</span><br><span class="line">结论： F[i][j]=max(@1,@2)  两者间的较大者</span><br><span class="line">状态转移方程为：f[i][j] = max（f[i - 1][j] ，f[i - 1][j - w[i]] + v[i]）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define V 500</span><br><span class="line">using namespace std;</span><br><span class="line">int w[20 + 1];</span><br><span class="line">int v[20 + 1];</span><br><span class="line">int f[20 + 1][V + 1];</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cout &lt;&lt; &quot;请输入物品个数:&quot;;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; </span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;请输入背包容量:&quot;;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">            if (w[i] &gt; j) &#123;</span><br><span class="line">                f[i][j] = f[i - 1][j];</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                f[i][j] = f[i - 1][j] &gt; f[i - 1][j - w[i]] + v[i] ? f[i - 1][j] : f[i - 1][j - weight[i]] + value[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[n][m] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><h3 id="不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。"><a href="#不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。" class="headerlink" title="不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。"></a>不限定每种物品的数量，同一样物品想拿多少拿多少，则问题称为无界或完全背包问题。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">分析：</span><br><span class="line">二维数组存放结果F[i][j]：表示第i件物品放入后，占用j的容量所表示的目标值（价格、魅力）</span><br><span class="line">特殊情况：i件商品超过剩余重量j，F[i][j]=F[i-1][j];</span><br><span class="line">放入物品i：@1:  F[i][j]=F[i-1][j-w[i]]+v[i]    w[i]表示i商品的重量，v[i]表示i的价格，或魅力</span><br><span class="line">不放入物品i：@2  ：F[i][j]=f[i-1][j];</span><br><span class="line"></span><br><span class="line">以上是0-1背包的分析，在0-1背包的基础上，完全背包就是增加了第i个物品个数的选择的问题，所以，只要满足，0&lt;=k*w[i]&lt;=j;这个条件，就是0-1背包的问题了；</span><br><span class="line">放入物品k个i：@1:  F[i][j]=F[i-1][j-k*w[i]]+v[i]*k</span><br><span class="line">结论： F[i][j]=max(@1,@2)  两者间的较大者</span><br><span class="line"></span><br><span class="line">相对的状态转移方程为：</span><br><span class="line">f[i][j] = max（f[i][j] ，f[i-1][j-k*w[i]]+v[i]*k)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define V 500</span><br><span class="line">using namespace std;</span><br><span class="line">int w[20 + 1];</span><br><span class="line">int v[20 + 1];</span><br><span class="line">int f[20 + 1][V + 1];</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    cout &lt;&lt; &quot;请输入物品个数:&quot;;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    cout &lt;&lt; &quot;请分别输入&quot; &lt;&lt; n &lt;&lt; &quot;个物品的重量和价值:&quot; &lt;&lt; endl; </span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;请输入背包容量:&quot;;</span><br><span class="line">    cin &gt;&gt; m;</span><br><span class="line">    for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">        for (int j = 1; j &lt;= m; j++) &#123;</span><br><span class="line">            for (int k = 0; k * w[i] &lt;= j; k++)&#123;</span><br><span class="line">            	f[i][j]=max(f[i][j],f[i-1][j-k*w[i]]+k*v[i]);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    cout &lt;&lt; &quot;背包能放的最大价值为:&quot; &lt;&lt; f[n][m] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -50,78 +166,229 @@
 
 <h2 id="查询连接问题"><a href="#查询连接问题" class="headerlink" title="查询连接问题"></a>查询连接问题</h2><p>问题描述：<br>有n个岛屿，其中m条连接，小明同学询问q次，问每次查询的结果</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">分析：将所有连接的岛屿做标记，标记为最小岛屿编号</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	int n , m , g ;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; g;</span><br><span class="line"></span><br><span class="line">	vector&lt;int&gt; v(n+1,0);</span><br><span class="line">	for (int i = 0; i &lt; n + 1;i++) &#123;</span><br><span class="line">		v[i] = i;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	for (int i = 0; i &lt; m; i++) &#123;</span><br><span class="line">		int a, b;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">		int t = min(v[a], v[b]);</span><br><span class="line">		for (int i = 0; i &lt; n + 1; i++) &#123;</span><br><span class="line">			if (v[i] == v[a] || v[i] == v[b]) &#123;</span><br><span class="line">				v[i] = t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	while (g--)</span><br><span class="line">	&#123;</span><br><span class="line">		int a, b;</span><br><span class="line">		cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">		if (v[a] == v[b]) &#123;</span><br><span class="line">			cout &lt;&lt; &quot;YES&quot; &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		else &#123;</span><br><span class="line">			cout &lt;&lt; &quot;NO&quot; &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-  </section>
-</article>
+            </div>
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> lyyourc </p>
-      <p class="subtitle"> You Are The JavaScript In My HTML </p>
-    <div>
-  </section>
+            <!-- Post information -->
+            
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+                <li class="previous page-item d-inline"><a href="/2021/08/30/Python/" class="page-link float-left">&larr;  Newer</a></li>
+            
+            
+                <li class="next page-item d-inline"><a href="/2020/09/17/%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%A1%B9%E7%9B%AE/" class="page-link float-right">Older  &rarr;</a></li>
+            
+        </ul>
+    </div>
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text= id="背包问题"><a href=""
->
-  Tweet
-</a>
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
+            
+                <!-- Comments -->
+                
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+                
 
-  return t;
-}(document, "script", "twitter-wjs"));
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">Expand all</span><span class="close-text" style="display: none;">Collapse all</span></a>
+                <a class="back-to-top d-block py-1" href="#">Back to top</a>
+                <a class="go-to-bottom d-block py-1" href="#">Go to bottom</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/archives">
+                                
+                                    Archives
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/categories">
+                                
+                                    Categories
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/about">
+                                
+                                    About
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; -2021 
+                    <a rel="external" class="copyright-link" href="" target="_blank">John Doe</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
 </script>
 
-  </section>
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="Searching Keywords..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
 </div>
 
-
-  
-    
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-<script>
-  var disqus_shortname = 'drakeleung';
-  
-  var disqus_url = 'http://example.com/2020/09/17/%E9%A2%98%E8%A7%A3%E6%80%9D%E8%B7%AF/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
-
-  
-</main>
 
 </body>
 </html>
