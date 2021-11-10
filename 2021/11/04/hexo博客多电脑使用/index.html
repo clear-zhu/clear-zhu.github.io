@@ -1,174 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-<!--Description-->
-
-
-
-    <meta name="description" content="目标有时候使用写博客记录内容的时候，自己常用的电脑并不在身边，重新在一台新的电脑上下载Node、hexo、git等等，还有各种路径，配置，还要新建仓库（当时的想法是，新建的博客都是会覆盖老的）。说实话，想想还是算了吧，干嘛瞎折腾。所以，经过不懈的努力终于配置好了多终端写Hexo（没啥大用），让自己想"/>
-
-
-<!--Author-->
-
-    <meta name="author" content="John Doe"/>
-
-
-<!--Open Graph Title-->
-
-    <meta property="og:title" content="hexo博客多终端"/>
-
-
-<!--Open Graph Description-->
-
-    <meta property="og:description" content="目标有时候使用写博客记录内容的时候，自己常用的电脑并不在身边，重新在一台新的电脑上下载Node、hexo、git等等，还有各种路径，配置，还要新建仓库（当时的想法是，新建的博客都是会覆盖老的）。说实话，想想还是算了吧，干嘛瞎折腾。所以，经过不懈的努力终于配置好了多终端写Hexo（没啥大用），让自己想"/>
-
-
-<!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hexo"/>
-
-<!--Type page-->
-
-    <meta property="og:type" content="article"/>
-
-
-<!--Page Cover-->
-
-
-    <meta property="og:image" content="http://example.com/img/home-bg.jpg"/>
-
-
-<meta name="twitter:card" content="summary_large_image"/>
-
-
-
-
-    <meta name="twitter:image" content="http://example.com/img/home-bg.jpg"/>
-
-
-<!-- Title -->
-
-<title>hexo博客多终端 | Hexo</title>
-
-<!-- Bootstrap Core CSS -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-
-<!-- Custom CSS -->
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<!-- Custom Fonts -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
-<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
-<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<!-- Gallery -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
-
-<!-- favicon -->
-
-<link rel="icon" href="/img/favicon.png"/>
-
-
-
-    <!-- Google Analytics -->
-    
-
+  <meta charset="utf-8">
+  
+  <title>hexo博客多终端 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
-<!-- Head tag -->
 
 <body>
-
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
-    <div class="container pl-0 pr-0">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <a class="navbar-brand text-white p-1 pl-3" href="/">Hexo</a>
-        </div>
-        <div class="navbar-nav float-right">
-            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
     </div>
-    <!-- /.container -->
-</nav>
-
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
-
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 text-center">
-                <div class="post-heading text-white">
-                    <h1>hexo博客多终端</h1>
-                    
-                </div>
-            </div>
-        </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
     </div>
+  </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Main Content -->
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                
-                    <span class="meta d-inline-block">
+      <div class="outer">
+        <section id="main"><article id="post-hexo博客多电脑使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/04/hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2021-11-04T09:20:00.000Z" itemprop="datePublished">2021-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
     
     
-        <span class="post-meta-split">&nbsp;|&nbsp;</span>
-        <i class="fas fa-user-edit"></i>
-        carl-zhu
-    
-    <!-- Date -->
-    
-        <span class="post-meta-split">&nbsp;|&nbsp;</span>
-        <i class="far fa-calendar-check fa-fw"></i>
-        2021-11-04
-    
-    <!-- word count and read count -->
-    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      hexo博客多终端
+    </h1>
+  
 
+      </header>
     
-
-    
-</span>  
-                
-                <h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>有时候使用写博客记录内容的时候，自己常用的电脑并不在身边，重新在一台新的电脑上下载Node、hexo、git等等，还有各种路径，配置，还要新建仓库（当时的想法是，新建的博客都是会覆盖老的）。说实话，想想还是算了吧，干嘛瞎折腾。所以，经过不懈的努力终于配置好了多终端写Hexo（没啥大用），让自己想记录的不要因为外界环境所阻碍。</p>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>有时候使用写博客记录内容的时候，自己常用的电脑并不在身边，重新在一台新的电脑上下载Node、hexo、git等等，还有各种路径，配置，还要新建仓库（当时的想法是，新建的博客都是会覆盖老的）。说实话，想想还是算了吧，干嘛瞎折腾。所以，经过不懈的努力终于配置好了多终端写Hexo（没啥大用），让自己想记录的不要因为外界环境所阻碍。</p>
 <h4 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h4><p>在GitHub中需要新建一个分支，新建分支方式，如下所示。</p>
-<p><div class="img-item" data-src="/images/hexo-1.png" data-sub-html=".caption"><img src="/images/hexo-1.png" alt="upload successful"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">upload successful</span></div></div><br>新建完分支后，我们需要做的是将新的分支作为默认分支（master分支是创建就有了，一般存放静态页面，配置之类的，当做所有分支的源），配置默认分支的方法如下所示。</p>
-<p><div class="img-item" data-src="/images/hexo-2.png" data-sub-html=".caption"><img src="/images/hexo-2.png" alt="upload successful"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">upload successful</span></div></div><br>到这里我们就完成了第一步。</p>
+<p><img src="/images/hexo-1.png" alt="upload successful"><br>新建完分支后，我们需要做的是将新的分支作为默认分支（master分支是创建就有了，一般存放静态页面，配置之类的，当做所有分支的源），配置默认分支的方法如下所示。</p>
+<p><img src="/images/hexo-2.png" alt="upload successful"><br>到这里我们就完成了第一步。</p>
 <h3 id="克隆分支"><a href="#克隆分支" class="headerlink" title="克隆分支"></a>克隆分支</h3><p>在你想要写博客或者项目的文件夹下克隆刚刚创建好的分支。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone “你的仓库克隆地址”</span><br></pre></td></tr></table></figure>
 <p>然后将.git之外的文件全部删除。然后测试一下提交（保存到仓库）的功能。新建一个文件夹，再在文件夹下随意创建一个文件（空文件夹无法上传）。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add new-folder/nwe-file</span><br><span class="line">git commit -m &quot;nwe file&quot;  //&quot;&quot;中是写到日志中的，可以更改</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 <p>在上面git push的时候可能会有错误。（下图中beanch是我拼写错误，应该写成分支的名称），下图的错误是http.sslverify值的错误。</p>
-<p><div class="img-item" data-src="/images/hexo-4.png" data-sub-html=".caption"><img src="/images/hexo-4.png" alt="upload successful"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">upload successful</span></div></div><br>用以下命令更改。</p>
+<p><img src="/images/hexo-4.png" alt="upload successful"><br>用以下命令更改。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//将http.sslVerify改为 false</span><br><span class="line"> git config --global http.sslVerify false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>没有错误的情况下提交会出现如下的样子。</p>
-<p><div class="img-item" data-src="/images/hexo-5.png" data-sub-html=".caption"><img src="/images/hexo-5.png" alt="upload successful"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">upload successful</span></div></div></p>
+<p><img src="/images/hexo-5.png" alt="upload successful"></p>
 <p>tip:有可能在push的时候会问你谁，你输入你的邮箱和姓名（GitHub）就行。</p>
 <h4 id="hexo环境"><a href="#hexo环境" class="headerlink" title="hexo环境"></a>hexo环境</h4><p>在新电脑上需要安装git、ssh-key、nodejs、hexo，这里不详细将每一个安装过程了。<br>安装git</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
@@ -186,234 +97,137 @@
 <p>将这个文件夹下的所有东西都复制到，第二步文件夹中（复制前应该只有.get文件）。在新的文件夹中，生成并布属。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p>成功后，登录localhost:4000/admin</p>
-<p><div class="img-item" data-src="/images/hexo-6.png" data-sub-html=".caption"><img src="/images/hexo-6.png" alt="upload successful"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">upload successful</span></div></div><br>出现如下的界面，说明大功告成。</p>
+<p><img src="/images/hexo-6.png" alt="upload successful"><br>出现如下的界面，说明大功告成。</p>
 <p>tip：每次写完博客不要忘记提交哦。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;简短说明&quot;  //&quot;&quot;中是写到日志中的，可以更改</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 <p>参考博客：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21193762%EF%BC%88%E7%9B%B4%E4%B8%8A%E4%BA%91%E9%9C%84%E5%9B%9E%E7%AD%94%E7%9A%84%EF%BC%89">https://www.zhihu.com/question/21193762（直上云霄回答的）</a></p>
 
-            </div>
-
-            <!-- Post information -->
-            
-            
-    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-        <ul class="pagination d-block text-center">
-            
-                <li class="previous page-item d-inline"><a href="/2021/11/04/jpa%E6%9F%A5%E8%AF%A2-poi%E5%86%99%E5%85%A5excel/" class="page-link float-left">&larr;  Newer</a></li>
-            
-            
-                <li class="next page-item d-inline"><a href="/2021/10/20/vue%E4%BE%8B%E5%AD%90%E8%AF%A6%E8%A7%A3/" class="page-link float-right">Older  &rarr;</a></li>
-            
-        </ul>
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/04/hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8/" data-id="ckvtigc7o000m9st69eh6ey7o" data-title="hexo博客多终端" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/11/04/jpa%E6%9F%A5%E8%AF%A2-poi%E5%86%99%E5%85%A5excel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jpa查询+poi写入excel
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/10/20/vue%E4%BE%8B%E5%AD%90%E8%AF%A6%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue例子详解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 
-            
-                <!-- Comments -->
-                
-
-                
-
-            
-
-        </div>
+</section>
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
     </div>
-</article> 
+  </div>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
-    <style>
-        #toc-content .toc-link::before {
-            background-color: transparent;
-            max-height: 25px;
-        }
-
-        #toc-content .toc-link.is-active-link::before {
-            background-color: #404040;
-        }
-    </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
-    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
-        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-            <i class="fas fa-list"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
-            <div class="toc-widget">
-                <div id="toc-content" class="text-truncate">
-                </div>
-            </div>
-            <div class="toc-menu pt-3 pl-4">
-                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">Expand all</span><span class="close-text" style="display: none;">Collapse all</span></a>
-                <a class="back-to-top d-block py-1" href="#">Back to top</a>
-                <a class="go-to-bottom d-block py-1" href="#">Go to bottom</a>
-            </div>
-        </div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/11/04/jpa%E6%9F%A5%E8%AF%A2-poi%E5%86%99%E5%85%A5excel/">jpa查询+poi写入excel</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/04/hexo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8/">hexo博客多终端</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/vue%E4%BE%8B%E5%AD%90%E8%AF%A6%E8%A7%A3/">vue例子详解</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/20/Java-vue%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/">Java vue搭建项目过程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/18/JPA/">JPA Respository</a>
+          </li>
+        
+      </ul>
     </div>
-    <script>
-        tocbot.init({
-            // Where to render the table of contents.
-            tocSelector: '#toc-content',
-            // Where to grab the headings to build the table of contents.
-            contentSelector: 'article',
-            // Which headings to grab inside of the contentSelector element.
-            headingSelector: 'h1, h2, h3',
-            // For headings inside relative or absolute positioned containers within content.
-            hasInnerContainers: true,
-        });
-    </script>
+  </div>
 
+  
+    
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 By Autoload<br>
+      Driven - <a href="https://hexo.io/" target="_blank">Hexo</a>|Theme - <a href="https://github.com/autoload/hexo-theme-auto" target="_blank">Auto</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
     
 
 
-    <!-- Footer -->
-    <hr />
-
-<!-- Footer -->
-<footer id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
-                <ul class="list-inline">
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </ul>
-                <ul class="copyright footer-menu list-inline">
-                    
-                    
-                        <li class="list-inline-item">
-                            
-                            
-                            <a href="/">
-                                
-                                    Home
-                                
-                            </a>
-                        </li>
-                    
-                        <li class="list-inline-item">
-                            
-                                <span class="copyright-split">&nbsp;|&nbsp;</span>
-                            
-                            
-                            <a href="/archives">
-                                
-                                    Archives
-                                
-                            </a>
-                        </li>
-                    
-                        <li class="list-inline-item">
-                            
-                                <span class="copyright-split">&nbsp;|&nbsp;</span>
-                            
-                            
-                            <a href="/tags">
-                                
-                                    Tags
-                                
-                            </a>
-                        </li>
-                    
-                        <li class="list-inline-item">
-                            
-                                <span class="copyright-split">&nbsp;|&nbsp;</span>
-                            
-                            
-                            <a href="/categories">
-                                
-                                    Categories
-                                
-                            </a>
-                        </li>
-                    
-                        <li class="list-inline-item">
-                            
-                                <span class="copyright-split">&nbsp;|&nbsp;</span>
-                            
-                            
-                            <a href="/about">
-                                
-                                    About
-                                
-                            </a>
-                        </li>
-                    
-                </ul>
-                <p class="copyright footer-author">
-                    &copy; -2021 
-                    <a rel="external" class="copyright-link" href="" target="_blank">John Doe</a><br/>
-                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
-                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
-                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
-                    
-                    
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
+<script src="/js/jquery-3.4.1.min.js"></script>
 
 
-    <!-- After footer scripts -->
-    <!-- jQuery -->
-<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
-
-<!-- For drop down -->
-<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
-<!-- Gallery -->
-<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
-<!-- Busuanzi -->
-
-
-<!-- Search script -->
-
-<script src="/js/search.js"></script>
-
-<script type="text/javascript">
-    $(function () {
-        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
-    });
-</script>
+<script src="/js/script.js"></script>
 
 
 
-<script src="/js/main.js"></script>
 
-
-
-    <!-- Search Modal -->
-    <!-- Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-        <div class="modal-content overflow-auto">
-            <div class="modal-header">
-                <input type="text" class="form-control" placeholder="Searching Keywords..." id="searchInput">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <div id="searchResult">
-                    <div class="search-empty text-center text-muted p-5">
-                        <i class="far fa-meh"></i>
-                    </div>
-                </div>
-            </div> 
-        </div>
-    </div>
-</div>
-
-
+  </div>
 </body>
 </html>
